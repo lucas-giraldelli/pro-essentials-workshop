@@ -1,4 +1,12 @@
-interface Scores {}
+interface RequiredScores {
+  math: number;
+  english: number;
+  science: number;
+}
+
+interface Scores extends RequiredScores {
+  [key: string]: number;
+}
 
 // @ts-expect-error science is missing!
 const scores: Scores = {
