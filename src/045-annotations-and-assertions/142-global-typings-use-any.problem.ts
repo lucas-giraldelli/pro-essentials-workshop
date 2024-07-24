@@ -7,7 +7,7 @@ const getObj = () => {
 };
 
 it("Should return an obj", () => {
-  const obj = getObj();
+  const obj = getObj() as { a: number, b: number };
 
   expect(obj.b).toEqual(456);
 

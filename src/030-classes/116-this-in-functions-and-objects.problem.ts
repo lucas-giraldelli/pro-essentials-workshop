@@ -1,10 +1,14 @@
 import { it, expect } from "vitest";
+interface Calculator {
+  x: number;
+  y: number;
+}
 
-function add() {
+function add(this: Calculator) {
   return this.x + this.y;
 }
 
-const setValues = (x: number, y: number) => {
+function setValues(this: Calculator, x: number, y: number) {
   this.x = x;
   this.y = y;
 };

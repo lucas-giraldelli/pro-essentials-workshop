@@ -4,6 +4,10 @@ class CanvasNode {
   x: number;
   y: number;
 
+  get position(): { x: number; y: number } {
+    return { x: this.x, y: this.y };
+  }
+
   constructor(position?: { x: number; y: number }) {
     this.x = position?.x ?? 0;
     this.y = position?.y ?? 0;

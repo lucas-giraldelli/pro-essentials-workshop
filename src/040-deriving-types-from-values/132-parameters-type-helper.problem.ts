@@ -11,7 +11,9 @@ const makeQuery = (
   },
 ) => {};
 
-type MakeQueryParameters = unknown;
+type MakeQueryParameters = Parameters<typeof makeQuery>;
+
+type FirstParameter = MakeQueryParameters[1];
 
 type tests = [
   Expect<

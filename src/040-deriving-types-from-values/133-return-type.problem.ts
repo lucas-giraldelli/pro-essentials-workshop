@@ -8,7 +8,7 @@ const createUser = (id: string) => {
   };
 };
 
-type User = unknown;
+type User = ReturnType<typeof createUser>;
 
 type test = Expect<
   Equal<

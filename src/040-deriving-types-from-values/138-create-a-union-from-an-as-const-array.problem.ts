@@ -9,7 +9,7 @@ export const programModes = [
   "plannedSelfDirected",
 ] as const;
 
-type AllPrograms = (typeof programModes)[keyof typeof programModes];
+type AllPrograms = (typeof programModes)[number];
 
 type test = Expect<
   Equal<
