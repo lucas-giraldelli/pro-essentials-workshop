@@ -8,6 +8,6 @@ const users = [
 // with 10x more references to `id`
 
 // How do we change id to userId?
-const filterUsersById = (id: string) => {
-  return users.filter((user) => user.id === id);
+const filterUsersById = (userId: string) => {
+  return users.filter((user) => user.id === userId);
 };
