@@ -1,7 +1,7 @@
 import { Expect, Equal } from "@total-typescript/helpers";
 import { expect, it } from "vitest";
 
-export function concatenate(...strings) {
+export function concatenate(...strings: string[]) {
   return strings.join("");
 }
 

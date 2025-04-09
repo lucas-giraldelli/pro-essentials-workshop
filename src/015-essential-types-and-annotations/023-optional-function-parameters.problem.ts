@@ -1,6 +1,6 @@
 import { Expect, Equal } from "@total-typescript/helpers";
 
-const concatName = (first: string, last: string) => {
+const concatName = (first: string, last?: string) => {
   if (!last) {
     return first;
   }

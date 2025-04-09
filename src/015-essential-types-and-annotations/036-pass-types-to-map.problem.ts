@@ -1,6 +1,11 @@
 // CODE
 
-const userMap = new Map();
+type User = {
+  name: string;
+  age: number;
+};
+
+const userMap = new Map<number, User>();
 
 // TESTS
 

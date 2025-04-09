@@ -2,7 +2,7 @@ import { Expect, Equal } from "@total-typescript/helpers";
 
 // CODE
 
-const add = (a: boolean, b: boolean) => {
+const add = (a: number, b: number) => {
   return a + b;
 };
 

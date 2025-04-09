@@ -1,5 +1,7 @@
 let example1: string = "Hello World!";
-let example2: string = 42;
-let example3: string = true;
-let example4: string = Symbol();
-let example5: string = 123n;
+let example2: number = 42;
+let example3: boolean = true;
+let example4: Symbol = Symbol();
+let example5: BigInt = 123n;
+
+// or you could let it infer
