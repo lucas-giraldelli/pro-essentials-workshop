@@ -5,7 +5,7 @@ interface Product {
   description: string;
 }
 
-const updateProduct = (id: number, productInfo: Omit<Product, "id">) => {
+const updateProduct = (id: number, productInfo: Partial<Product>) => {
   // Do something with the productInfo
 };
 
