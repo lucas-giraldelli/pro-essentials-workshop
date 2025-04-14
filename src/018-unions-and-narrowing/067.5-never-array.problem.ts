@@ -1,4 +1,4 @@
-const shoppingCart = {
+const shoppingCart: Record<"items", string[]> = {
   items: [],
 };
 

@@ -1,6 +1,6 @@
 import { Equal, Expect } from "@total-typescript/helpers";
 
-function getUsername(username: string) {
+function getUsername(username: string | null) {
   if (username !== null) {
     return `User: ${username}`;
   } else {

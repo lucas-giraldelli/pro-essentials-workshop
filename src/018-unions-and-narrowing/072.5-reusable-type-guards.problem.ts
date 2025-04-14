@@ -1,8 +1,11 @@
 import { Equal, Expect } from "@total-typescript/helpers";
 import { describe, expect, it } from "vitest";
 
+const isArrayOfStrings = (value: unknown) =>
+  Array.isArray(value) && value.every((item) => typeof item === "string");
+
 const joinNames = (value: unknown) => {
-  if (Array.isArray(value) && value.every((item) => typeof item === "string")) {
+  if (isArrayOfStrings(value)) {
     return value.join(" ");
   }
 
@@ -10,7 +13,7 @@ const joinNames = (value: unknown) => {
 };
 
 const createSections = (value: unknown) => {
-  if (Array.isArray(value) && value.every((item) => typeof item === "string")) {
+  if (isArrayOfStrings(value)) {
     return value.map((item) => `Section: ${item}`);
   }
 

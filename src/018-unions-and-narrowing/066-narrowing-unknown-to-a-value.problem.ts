@@ -2,7 +2,15 @@ import { Equal, Expect } from "@total-typescript/helpers";
 import { expect, it } from "vitest";
 
 const parseValue = (value: unknown) => {
-  if (true) {
+  if (
+    typeof value === "object" &&
+    value &&
+    "data" in value &&
+    value.data &&
+    typeof value.data === "object" &&
+    "id" in value.data &&
+    value.data.id === "string"
+  ) {
     return value.data.id;
   }
 
