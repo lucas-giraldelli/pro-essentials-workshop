@@ -5,7 +5,7 @@ type ButtonAttributes = {
 const modifyButton = (attributes: ButtonAttributes) => {};
 
 const buttonAttributes = {
-  type: "button",
+  type: "button" as const,
 };
 
 modifyButton(buttonAttributes);
@@ -16,10 +16,10 @@ const modifyButtons = (attributes: ButtonAttributes[]) => {};
 
 const buttonsToChange = [
   {
-    type: "button",
+    type: "button" as const,
   },
   {
-    type: "submit",
+    type: "submit" as const,
   },
 ];
 

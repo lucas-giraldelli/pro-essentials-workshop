@@ -6,7 +6,7 @@ type SearchParams = {
   order?: "asc" | "desc";
 };
 
-const handleSearchParams = (search: SearchParams) => {
+const handleSearchParams = (search: Readonly<SearchParams>) => {
   // Do something with the search params
 
   // @ts-expect-error Should not be able to modify readonly
