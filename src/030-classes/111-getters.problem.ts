@@ -9,6 +9,13 @@ class CanvasNode {
     this.y = position?.y ?? 0;
   }
 
+  get position() {
+    return {
+      x: this.x,
+      y: this.y,
+    };
+  }
+
   move(x: number, y: number) {
     this.x = x;
     this.y = y;

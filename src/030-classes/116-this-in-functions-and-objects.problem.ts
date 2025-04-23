@@ -1,13 +1,13 @@
 import { it, expect } from "vitest";
 
-function add() {
+function add(this: { x: number; y: number }) {
   return this.x + this.y;
 }
 
-const setValues = (x: number, y: number) => {
+function setValues(this: { x: number; y: number }, x: number, y: number) {
   this.x = x;
   this.y = y;
-};
+}
 
 it("Should add the numbers together", () => {
   const calculator = {
