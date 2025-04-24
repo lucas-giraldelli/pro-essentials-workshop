@@ -11,7 +11,7 @@ export const programModeEnumMap = {
 
 type ProgramModeMap = typeof programModeEnumMap;
 
-type AllPrograms = unknown;
+type AllPrograms = ProgramModeMap[keyof ProgramModeMap];
 
 type test = Expect<
   Equal<

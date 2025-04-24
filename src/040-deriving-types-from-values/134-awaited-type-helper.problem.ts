@@ -8,7 +8,7 @@ const fetchUser = async (id: string) => {
   };
 };
 
-type User = ReturnType<typeof fetchUser>;
+type User = Awaited<ReturnType<typeof fetchUser>>;
 
 type test = Expect<
   Equal<
