@@ -1,3 +1,4 @@
+// don't use this
 const enum Direction {
   Up,
   Down,

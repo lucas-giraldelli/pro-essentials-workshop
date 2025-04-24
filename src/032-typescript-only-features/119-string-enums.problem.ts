@@ -1,13 +1,13 @@
 import { it } from "vitest";
 
-const Method = {
-  GET: "GET",
-  POST: "POST",
-  PUT: "PUT",
-  DELETE: "DELETE",
-};
+enum Method {
+  GET = "GET",
+  POST = "POST",
+  PUT = "PUT",
+  DELETE = "DELETE",
+}
 
-const request = (url: string, method: "GET" | "POST" | "PUT" | "DELETE") => {
+const request = (url: string, method: Method) => {
   // ...
 };
 
