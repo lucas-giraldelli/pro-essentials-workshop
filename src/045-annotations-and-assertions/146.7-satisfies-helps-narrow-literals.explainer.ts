@@ -6,7 +6,7 @@ const modifyButton = (attributes: ButtonAttributes) => {};
 
 const buttonAttributes = {
   type: "button",
-};
+} as const;
 
 modifyButton(buttonAttributes);
 
@@ -21,6 +21,6 @@ const buttonsToChange = [
   {
     type: "submit",
   },
-];
+] satisfies ButtonAttributes[];
 
 modifyButtons(buttonsToChange);

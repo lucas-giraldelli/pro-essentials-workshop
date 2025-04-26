@@ -3,8 +3,10 @@ import { expect, it } from "vitest";
 const handleFormData = (e: SubmitEvent) => {
   e.preventDefault();
 
-  // @ts-ignore
-  const data = new FormData(e.target);
+  const data = new FormData(
+    // @ts-ignore
+    e.target,
+  );
   const value = Object.fromEntries(data.entries());
   return value;
 };

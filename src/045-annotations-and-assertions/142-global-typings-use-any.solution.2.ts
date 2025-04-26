@@ -1,15 +1,24 @@
 // Uncomment this line to see a stricter JSON.parse!
-// import '@total-typescript/ts-reset'
+import "@total-typescript/ts-reset";
+import { z } from "zod";
 
 import { expect, it } from "vitest";
 
-const getObj = () => {
-  const obj: {
-    a: number;
-    b: number;
-  } = JSON.parse('{ "a": 123, "b": 456 }');
+const schema = z.object({
+  a: z.number(),
+  b: z.number(),
+});
 
-  return obj;
+const getObj = () => {
+  const obj = JSON.parse('{ "a": 123, "b": 456 }');
+
+  const zodObj = schema.safeParse(obj);
+
+  if (zodObj.success) {
+    return zodObj.data;
+  }
+
+  throw new Error("Error parsing object");
 };
 
 it("Should return an obj", () => {
