@@ -2,20 +2,51 @@
  * How do we annotate the errors this function throws?
  */
 
-type PossibleErrors = SyntaxError | DOMException;
+const getUserFromLocalStorage = (
+  id: string,
+):
+  | {
+      success: true;
+      data: any;
+    }
+  | {
+      success: false;
+      error: SyntaxError | DOMException;
+    } => {
+  try {
+    const user = localStorage.getItem(id);
+    if (!user) {
+      return {
+        success: true,
+        data: undefined,
+      };
+    }
 
-const getUserFromLocalStorage = (id: string) => {
-  const user = localStorage.getItem(id);
-  if (!user) {
-    return undefined;
+    return {
+      success: true,
+      data: JSON.parse(user),
+    };
+  } catch (e) {
+    if (e instanceof DOMException) {
+      return {
+        success: false,
+        error: e,
+      };
+    }
+    if (e instanceof SyntaxError) {
+      return {
+        success: false,
+        error: e,
+      };
+    }
+    throw e;
   }
-
-  return JSON.parse(user);
 };
 
-try {
-  const user = getUserFromLocalStorage("user-1");
-} catch (
-  // How do we make this typed as PossibleErrors?
-  e
-) {}
+const user = getUserFromLocalStorage("user-1");
+
+if (user.success) {
+  user.data;
+} else {
+  user.error.message;
+}

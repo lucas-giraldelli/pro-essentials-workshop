@@ -8,5 +8,5 @@ const format = (input: string | number | boolean) => {
   const inputType = typeof input as "string" | "number" | "boolean";
   const formatter = objOfFunctions[inputType];
 
-  return formatter(input);
+  return formatter(input as never);
 };

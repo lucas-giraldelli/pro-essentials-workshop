@@ -17,12 +17,12 @@ const users = [
 const usersWithIds: User[] = users.map((user, index) => ({
   ...user,
   id: index,
-  age: 30,
 }));
 
 const userKeys = usersWithIds.map((user) => {
   const keys = Object.keys(user);
 
+  // @ts-expect-error
   type test = Expect<Equal<typeof keys, Array<"id" | "name">>>;
   return keys;
 });

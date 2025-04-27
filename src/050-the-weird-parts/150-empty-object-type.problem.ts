@@ -1,4 +1,4 @@
-const acceptAnythingExceptNullOrUndefined = (input) => {};
+const acceptAnythingExceptNullOrUndefined = (input: {}) => {};
 
 acceptAnythingExceptNullOrUndefined("hello");
 acceptAnythingExceptNullOrUndefined(42);
